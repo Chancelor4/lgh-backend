@@ -1,0 +1,2 @@
+Thu Nov 09 2023 | 5:7:7 [Error Log] error: Unexpected token } in JSON at position 252
+Thu Nov 09 2023 | 5:7:26 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: "33" }

@@ -1,0 +1,19 @@
+Thu Nov 09 2023 | 0:0:23 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:15:43 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:16:7 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:16:28 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:16:30 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:30:48 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:36:15 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:36:16 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:36:24 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:37:45 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:37:58 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:39:33 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:42:42 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:42:56 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:45:31 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:50:3 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:50:25 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: null }
+Thu Nov 09 2023 | 0:50:51 [Error Log] error: Student validation failed: id: Path `id` is required.
+Thu Nov 09 2023 | 0:51:46 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: "85" }

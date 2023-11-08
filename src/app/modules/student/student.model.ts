@@ -1,32 +1,33 @@
 import { Schema, model } from 'mongoose';
-import { IUser, UserModel } from './user.interface';
+import { IStudent, StudentModel } from './student.interface';
 
-const userSchema = new Schema<IUser>(
+
+const studentSchema = new Schema<IStudent>(
   {
     id: {
       type: String,
       required: true,
       unique: true,
     },
-    role: {
+    name:{
       type: String,
       required: true,
     },
-    password: {
+    gender:{
       type: String,
       required: true,
     },
-    studentId:{
-      type: Schema.Types.ObjectId,
-      ref: 'Student', //collection name as
+    birthdate:{
+      type: String,
+      required: true,
     },
-    parentId:{
-      type: Schema.Types.ObjectId,
-      ref: 'Parent', //collection name as
+    email:{
+      type: String,
+      required: true,
     },
-    teacherId:{
-      type: Schema.Types.ObjectId,
-      ref: 'Teacher', //collection name as
+    grade:{
+      type: String,
+      required: true,
     },
     },
 
@@ -34,4 +35,4 @@ const userSchema = new Schema<IUser>(
     timestamps: true,
   }
 );
-export const User = model<IUser, UserModel>('User', userSchema);
+export const Student = model<IStudent, StudentModel>('Student', studentSchema);

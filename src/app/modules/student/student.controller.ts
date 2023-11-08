@@ -1,35 +1,36 @@
-import { Request, Response } from 'express';
-import { RequestHandler } from 'express-serve-static-core';
-import httpStatus from 'http-status';
-import catchAsync from '../../../shared/catchAsync';
 
-import { IUser } from './user.interface';
-import { UserService } from './user.service';
-import { sendSuccessResponse } from '../../../shared/customResponse';
 
-const createUser: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
-    const  user  = req.body;
-    const result = await UserService.createUser(user);
 
-    sendSuccessResponse<IUser>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'user created successfully!',
-      data: result,
-    });
-  }
-);
+// const createUser: RequestHandler = catchAsync(
+//   async (req: Request, res: Response) => {
+//     const  user  = req.body;
+//     const result = await UserService.createUser(user);
 
-const getUser: RequestHandler = catchAsync(
+import { Request, RequestHandler, Response } from "express";
+import catchAsync from "../../../shared/catchAsync";
+import { sendSuccessResponse } from "../../../shared/customResponse";
+import { IStudent } from "./student.interface";
+import httpStatus from "http-status";
+import { StudentService } from "./student.service";
+
+//     sendSuccessResponse<IUser>(res, {
+//       statusCode: httpStatus.OK,
+//       success: true,
+//       message: 'user created successfully!',
+//       data: result,
+//     });
+//   }
+// );
+
+const getStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
  
-    const result = await UserService.getAllUser();
+    const result = await StudentService.getAllUser();
 
-    sendSuccessResponse<IUser[]>(res, {
+    sendSuccessResponse<IStudent[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'user retrive successfully!',
+      message: 'Student retrive successfully!',
       data: result,
     });
   }
@@ -37,6 +38,5 @@ const getUser: RequestHandler = catchAsync(
 
 
 export const UserController = {
-  createUser,
-  getUser
+  getStudent
 };

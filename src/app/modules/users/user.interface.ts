@@ -6,7 +6,7 @@ export type IUser = {
   password: string;
   studentId?: Types.ObjectId;
   parentId?: Types.ObjectId;
-  teacherId?: Types.ObjectId;
+  facilitatorId?: Types.ObjectId;
   
 };
 export type UserModel = Model<IUser, Record<string, unknown>>;

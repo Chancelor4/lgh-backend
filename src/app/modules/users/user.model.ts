@@ -24,14 +24,12 @@ const userSchema = new Schema<IUser>(
       type: Schema.Types.ObjectId,
       ref: 'Parent', //collection name as
     },
-    teacherId:{
+    facilitatorId:{
       type: Schema.Types.ObjectId,
-      ref: 'Teacher', //collection name as
+      ref: 'Facilitator', //collection name as
     },
     },
 
-  {
-    timestamps: true,
-  }
+
 );
 export const User = model<IUser, UserModel>('User', userSchema);

@@ -288,4 +288,3 @@ Make sure you have the following dependencies installed globally:
     databaseConnection()
     ```
 
-# Clone the project for all the error handler, logger and custom functions ------------------------------>

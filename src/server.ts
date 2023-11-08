@@ -38,7 +38,7 @@ process.on('SIGTERM', () => {
 
 async function databaseConnection() {
   try {
-    // await mongoose.connect(config.database_string as string)
+    await mongoose.connect(config.database_url as string)
     // successLogger.info('Database connected successfully')
 
     server = app.listen(config.port, () => {

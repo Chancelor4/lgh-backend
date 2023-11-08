@@ -1,77 +1,40 @@
-import express, { Application } from 'express'
-import nodemailer from 'nodemailer';
-import cors from 'cors'
-import globalErrorHandler from './app/middlewares/globalErrorHandler'
-import httpStatus from 'http-status'
-import { sendSuccessResponse } from './shared/customResponse'
+import cors from 'cors';
+import express, { Application, NextFunction, Request, Response } from 'express';
+import httpStatus from 'http-status';
+import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import routes from './app/routes';
+const app: Application = express();
 
+app.use(cors());
 
-// Import routes
-import routes from './app/routes/index'
+//parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-const app: Application = express()
+// app.use('/api/v1/users/', UserRoutes);
+// app.use('/api/v1/academic-semesters', AcademicSemesterRoutes);
+app.use('/api/v1/', routes);
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-email-password',
-  },
-});
+//Testing
+// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+//   throw new Error('Testing Error logger')
+// })
 
-// Testing route
-app.get('/', async (req, res, next) => {
-  const responseData = {
-    message: 'Welcome to Express API template',
-    data: null,
-  }
-  sendSuccessResponse(res, responseData)
-})
+//global error handler
+app.use(globalErrorHandler);
 
-app.post('/send-email', (req, res) => {
-  const { sender, recipient, subject, message } = req.body;
-
-  const mailOptions = {
-    from: sender,
-    to: recipient,
-    subject,
-    text: message,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      res.status(500).send('Email not sent');
-    } else {
-      console.log('Email sent: ' + info.response);
-      res.status(200).send('Email sent');
-    }
-  });
-});
-
-
-// All routes here
-// app.use('/api/v1', routes)
-
-// Global error handler
-app.use(globalErrorHandler)
-
-// Forbidden routes
-app.all('*', (req, res, next) => {
+//handle not found
+app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(httpStatus.NOT_FOUND).json({
-    status: 'false',
-    message: `No API endpoint found for ${req.method} ${req.originalUrl}`,
+    success: false,
+    message: 'Not Found',
     errorMessages: [
       {
-        message: `No API endpoint found for ${req.method} ${req.originalUrl}`,
         path: req.originalUrl,
+        message: 'API Not Found',
       },
     ],
-    stack: '',
-  })
-})
-
-export default app
+  });
+  next();
+});
+export default app;

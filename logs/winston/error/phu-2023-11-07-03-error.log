@@ -1,0 +1,2 @@
+Tue Nov 07 2023 | 3:32:31 [Error Log] error: User validation failed: id: Path `id` is required.
+Tue Nov 07 2023 | 3:33:40 [Error Log] error: Operation `users.insertOne()` buffering timed out after 10000ms

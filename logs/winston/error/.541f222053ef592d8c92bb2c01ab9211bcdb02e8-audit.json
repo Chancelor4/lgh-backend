@@ -79,6 +79,11 @@
             "date": 1699484827364,
             "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\error\\phu-2023-11-09-05-error.log",
             "hash": "a7c37840877eb49fc81d28491d27fb28357be8fe7bef5ee96f2dd24498f291ab"
+        },
+        {
+            "date": 1699997648449,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\error\\phu-2023-11-15-03-error.log",
+            "hash": "b16afd2e190661ccb22da322e060c7cfc39e59c3734eda179678bdfefdce238c"
         }
     ],
     "hashType": "sha256"

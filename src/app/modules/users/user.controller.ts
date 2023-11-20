@@ -9,7 +9,8 @@ import { sendSuccessResponse } from '../../../shared/customResponse';
 import { Facilitator } from './../teachers/teacher.model';
 import pick from '../../../shared/pick';
 import { userSearchableFields } from './user.constants';
-import { paginationFields  } from '../../../constant/shared.constant';
+import { paginationFields, sendReponse  } from '../../../constant/shared.constant';
+import { IParent } from '../parents/parents.interface';
 
 const createUser: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -37,6 +38,19 @@ const createFacilitators: RequestHandler = catchAsync(
     });
   }
 );
+const createParents: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const  {parent ,... userData}  = req.body;
+    const result = await UserService.createParent(userData ,parent);
+
+    sendReponse<IUser>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Parent created successfully!',
+      data: result,
+    });
+  }
+);
 
 const getUser: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -55,7 +69,8 @@ const getUser: RequestHandler = catchAsync(
 const getAllUserDetails = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, userSearchableFields);
   const paginationOptions = pick(req.query, paginationFields);
-
+console.log("filters",filters);
+console.log("paginationOptions",paginationOptions);
   const result = await UserService.getAllUserDetails(
     filters,
     paginationOptions
@@ -75,5 +90,6 @@ export const UserController = {
   createUser,
   getUser,
   createFacilitators,
-  getAllUserDetails
+  getAllUserDetails,
+  createParents
 };

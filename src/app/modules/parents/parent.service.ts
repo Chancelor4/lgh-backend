@@ -1,8 +1,7 @@
 // create user
 
 import ApiError from "../../../errors/ApiError";
-import { IStudent } from "./student.interface";
-import { Student } from "./student.model";
+
 
 
 

@@ -1,39 +1,29 @@
 // create user
 
 import ApiError from "../../../errors/ApiError";
-import { IStudent } from "../student/student.interface";
-import { Student } from "../student/student.model";
+import { IFacilitator } from "./teacher.interface";
+import { Facilitator } from "./teacher.model";
 
 
-// Create a user
-const createUser = async (user: IUser ,student:IStudent) => {
-  //  student create korbo
-    console.log("user",user);
-    console.log("student",student);
-  const createdStudent = await Student.create(student);  
-
-  if (!createdStudent) {
-    throw new ApiError(400, 'Failed to create');
+//*Update Teacher
+const updateTeacher = async (id:string ,payload:Partial<IFacilitator>):Promise<IFacilitator |null> => {
+ const updatedTeacher = await Facilitator.findOneAndUpdate({_id:id}, payload, {new: true});
+  if (!updatedTeacher) {
+    throw new ApiError(400, 'Failed to update Facilitator');
   }
-   user.studentId = createdStudent._id;
-  const createdUser = (await User.create(user)).populate('studentId');
-    if (!createdUser) {
-        throw new ApiError(400, 'Failed to create');
-      }
-      return createdUser;
-   
-   
+  return updatedTeacher;
 }
-const getAllUser = async () => {
 
-    const createdUser = await User.find();
-    if (!createdUser) {
-        throw new ApiError(400, 'Failed to Get');
-      }
-    return createdUser;
-   
-}
-export const UserService = {
-createUser,
-getAllUser
+// !Delete Teacher service
+ const delteTeacher = async (id: string): Promise<IFacilitator | null> => { 
+  const result = await Facilitator.findByIdAndDelete({ _id: id });
+  if (!result) {
+    throw new ApiError(400, 'Failed to delete');
+  }
+  return result;
+ }
+
+export const TeacherService = {
+  updateTeacher,
+  delteTeacher
 }

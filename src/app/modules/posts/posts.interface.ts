@@ -1,9 +1,9 @@
-import { Schema} from "mongoose";
+import { Schema, Types} from "mongoose";
 
 export type IPost = {
     title: string;
     content: string;
-    authorId: Schema.Types.ObjectId;
+    authorId:Types.ObjectId;
     createdAt: Date;
 
 }

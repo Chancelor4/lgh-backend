@@ -1,0 +1,5 @@
+Thu Nov 16 2023 | 2:42:44 [Error Log] error: Unexpected token } in JSON at position 202
+Thu Nov 16 2023 | 2:42:52 [Error Log] error: E11000 duplicate key error collection: lgh-web.users index: id_1 dup key: { id: "36" }
+Thu Nov 16 2023 | 2:57:1 [Error Log] error: Failed to create
+Thu Nov 16 2023 | 2:57:43 [Error Log] error: E11000 duplicate key error collection: lgh-web.users index: id_1 dup key: { id: "38" }
+Thu Nov 16 2023 | 2:58:19 [Error Log] error: E11000 duplicate key error collection: lgh-web.users index: id_1 dup key: { id: "39" }

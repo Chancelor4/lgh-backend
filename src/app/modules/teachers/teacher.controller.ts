@@ -3,40 +3,49 @@ import { RequestHandler } from 'express-serve-static-core';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 
-import { IUser } from './teacher.interface';
-import { UserService } from './teacher.service';
+
 import { sendSuccessResponse } from '../../../shared/customResponse';
+import { TeacherService } from './teacher.service';
+import { IFacilitator } from './teacher.interface';
+import { sendReponse } from '../../../constant/shared.constant';
 
-const createUser: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
-    const  {student ,... userData}  = req.body;
-    const result = await UserService.createUser(userData ,student);
+//* Update Teacher Controller
+const updateTeacherController: RequestHandler = catchAsync(
+  async (req: Request, res: Response)=> {
+    const id = req.params.id;
+    const teacher = req.body;
+    const result = await TeacherService.updateTeacher(id ,teacher);
+  
 
-    sendSuccessResponse<IUser>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'user created successfully!',
-      data: result,
-    });
-  }
-);
 
-const getUser: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
+  sendReponse<IFacilitator>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Teacher Update successfully!',
+    data: result,
+  });}
  
-    const result = await UserService.getAllUser();
+);
 
-    sendSuccessResponse<IUser[]>(res, {
+//!Delete Teacher controller
+ const deleteTeacherController: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const id = req.params.id;
+    const result = await TeacherService.delteTeacher(id);
+
+    sendReponse<IFacilitator>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'user retrive successfully!',
+      message: 'Teacher Delete successfully!',
       data: result,
     });
   }
 );
 
 
-export const UserController = {
-  createUser,
-  getUser
+
+
+export const TeacherController = {
+  updateTeacherController,
+  deleteTeacherController
 };

@@ -6,21 +6,6 @@
     "auditLog": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\.465f22ebde4e165dee2cfca88a8a8d12d589c067-audit.json",
     "files": [
         {
-            "date": 1699034164366,
-            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-03-23-success.log",
-            "hash": "a0982a5356f904c34373e8bb30f7fb3e3a81badf34c938d4ba2a49efa099734d"
-        },
-        {
-            "date": 1699303252217,
-            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-07-02-success.log",
-            "hash": "451efb12c8174de01e540a1281ea373d5cca85fe1ea43b8638c3c947bdda6ebf"
-        },
-        {
-            "date": 1699304434762,
-            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-07-03-success.log",
-            "hash": "5bfc95ee48b4ae4ca6dba5c8b79dc866a531c5789a89a97c4548002720f920e1"
-        },
-        {
             "date": 1699308223774,
             "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-07-04-success.log",
             "hash": "b42c3d67f983ed02d0ae63295cd277b46ee3ea679a2c94bdb9721d7ae1411788"
@@ -79,6 +64,41 @@
             "date": 1699997648433,
             "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-15-03-success.log",
             "hash": "5e5c0f91aeaf58cf89924b90ced9241ed93c81f874053aee3ffce14c538bc0cf"
+        },
+        {
+            "date": 1700068369743,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-15-23-success.log",
+            "hash": "d2d814cefa31a115f29097f745abd5e88cccdeb44ba5bd0dc3d71d656f30d1f6"
+        },
+        {
+            "date": 1700072823008,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-16-00-success.log",
+            "hash": "de10296d97d65a9fbf47815d71c10d74e9c42bbc2ef51a16ce801e62fba8c249"
+        },
+        {
+            "date": 1700077261824,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-16-01-success.log",
+            "hash": "b3d61117fb7b1e29130644abf4fa6776126bdd059e2f7c222310447543b55299"
+        },
+        {
+            "date": 1700078412541,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-16-02-success.log",
+            "hash": "90669a0901355748b544cbbece816b0f1f8317f4904805e61c7b531c96c15a0e"
+        },
+        {
+            "date": 1700082158930,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-16-03-success.log",
+            "hash": "4166ab09ce5abdea85e8900931e829c9bdcf60b053b5b1f1e94da0afbb5896f4"
+        },
+        {
+            "date": 1700252779422,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-18-02-success.log",
+            "hash": "080a58aed608df0d1e0b3a5c990248b5e144f104f8b248640b8008fb7b60979a"
+        },
+        {
+            "date": 1700515919074,
+            "name": "D:\\Projects Files\\lgh-backend\\logs\\winston\\success\\phu-2023-11-21-03-success.log",
+            "hash": "171a1863e6530ab8971663e455bf5b45cd5efd31178f5fbd640479ebf2efd0f6"
         }
     ],
     "hashType": "sha256"

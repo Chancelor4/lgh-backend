@@ -11,6 +11,7 @@ const facilitatorSchema = new Schema<IFacilitator>(
     email:{
       type: String,
       required: true,
+      unique: true,
     },
     designation:{
       type: String,

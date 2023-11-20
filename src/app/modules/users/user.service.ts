@@ -11,8 +11,10 @@ import { userSearchableFields, userSerchableFilters } from './user.constants';
 import { IGenericResponse, IPaginationOption } from "../../../interfaces/sharedInterface";
 import paginationHelper, { calculatePagination } from "../../helpers/paginationHelper";
 import { SortOrder } from "mongoose";
+import { IParent } from "../parents/parents.interface";
+import { Parent } from "../parents/parent.model";
 
-// Create a user
+// Create a user sdtudet
 const createUser = async (user: IUser ,student:IStudent) => {
   //  student create korbo
     console.log("user",user);
@@ -41,6 +43,25 @@ const createFacilitators  = async (user: IUser ,facilitator:IFacilitator) => {
   }
    user.facilitatorId= createdFacilitator._id;
   const createdUser = (await User.create(user)).populate('facilitatorId');
+    if (!createdUser) {
+        throw new ApiError(400, 'Failed to create');
+      }
+      return createdUser;
+   
+   
+}
+
+const createParent  = async (user: IUser ,parent:IParent) => {
+  //  student create korbo
+    
+  const createdParent= (await Parent.create(parent))  
+
+  if (!createdParent) {
+    throw new ApiError(400, 'Failed to create');
+  }
+  console.log("createdParent",createdParent);
+   user.parentId= createdParent._id;
+  const createdUser = (await User.create(user)).populate('parentId');
     if (!createdUser) {
         throw new ApiError(400, 'Failed to create');
       }
@@ -96,7 +117,7 @@ const getAllUserDetails = async (
   const whereConditons =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await User.find(whereConditons)
+  const result = await User.find(whereConditons).populate('studentId').populate('facilitatorId').populate('parentId') 
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
@@ -114,8 +135,8 @@ const getAllUserDetails = async (
 };
 export const UserService = {
 createUser,
-
 getAllUser,
 getAllUserDetails,
-createFacilitators
+createFacilitators,
+createParent
 }

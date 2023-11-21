@@ -24,6 +24,7 @@ const createUser = async (user: IUser ,student:IStudent) => {
   if (!createdStudent) {
     throw new ApiError(400, 'Failed to create');
   }
+  console.log('going to user')
    user.studentId = createdStudent._id;
   const createdUser = (await User.create(user)).populate('studentId');
     if (!createdUser) {

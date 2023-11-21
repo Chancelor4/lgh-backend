@@ -1,5 +1,0 @@
-Tue Nov 07 2023 | 4:15:40 [Error Log] error: User validation failed: password: Path `password` is required., role: Path `role` is required., id: Path `id` is required.
-Tue Nov 07 2023 | 4:20:37 [Error Log] error: Operation `users.insertOne()` buffering timed out after 10000ms
-Tue Nov 07 2023 | 4:20:45 [Error Log] error: Operation `users.insertOne()` buffering timed out after 10000ms
-Tue Nov 07 2023 | 4:58:45 [Error Log] error: User validation failed: password: Path `password` is required., role: Path `role` is required., id: Path `id` is required.
-Tue Nov 07 2023 | 4:59:42 [Error Log] error: Operation `users.insertOne()` buffering timed out after 10000ms

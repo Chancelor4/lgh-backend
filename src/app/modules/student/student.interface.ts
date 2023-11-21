@@ -3,8 +3,8 @@ import { Model } from 'mongoose';
 export type IStudent = {
  id:string;
  name: string;
- gender: string;
- birthdate: string;
+ gender?: string;
+ birthdate?: string;
  email: string;
  grade: string;
 };

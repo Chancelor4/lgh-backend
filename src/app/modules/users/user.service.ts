@@ -13,6 +13,8 @@ import paginationHelper, { calculatePagination } from "../../helpers/paginationH
 import { SortOrder } from "mongoose";
 import { IParent } from "../parents/parents.interface";
 import { Parent } from "../parents/parent.model";
+import { IAdmin } from "../Admin/admin.interface";
+import { Admin } from "../Admin/admin.model";
 
 // Create a user sdtudet
 const createUser = async (user: IUser ,student:IStudent) => {
@@ -70,6 +72,24 @@ const createParent  = async (user: IUser ,parent:IParent) => {
    
    
 }
+
+const createAdmin = async (user: IUser ,admin:IAdmin) => {
+  //  student create korbo
+    
+  const createdAdmin = await Admin.create(admin);  
+
+  if (!createdAdmin) {
+    throw new ApiError(400, 'Failed to create');
+  }
+   user.adminId= createdAdmin._id;
+  const createdUser = (await User.create(user)).populate('adminId');
+    if (!createdUser) {
+        throw new ApiError(400, 'Failed to create');
+      }
+      return createdUser;
+}
+
+
 const getAllUser = async () => {
 
     const createdUser = await User.find();
@@ -139,5 +159,6 @@ createUser,
 getAllUser,
 getAllUserDetails,
 createFacilitators,
-createParent
+createParent,
+createAdmin,
 }

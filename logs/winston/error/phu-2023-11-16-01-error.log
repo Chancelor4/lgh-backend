@@ -1,2 +1,0 @@
-Thu Nov 16 2023 | 1:8:41 [Error Log] error: User validation failed: password: Path `password` is invalid (12345).
-Thu Nov 16 2023 | 1:45:57 [Error Log] error: E11000 duplicate key error collection: lgh-web.users index: id_1 dup key: { id: "75" }

@@ -13,7 +13,7 @@ const createPostController = catchAsync(async (req, res) => {
     sendReponse<IPost>(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: 'Student Update successfully!',
+        message: 'post created !',
         data: post,
       });
 

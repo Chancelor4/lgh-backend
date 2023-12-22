@@ -60,7 +60,7 @@ const updateStudent: RequestHandler = catchAsync(
     const id = req.params.id;
     const result = await StudentService.delteStudent(id);
 
-    sendReponse<IStudent>(res, {
+    sendReponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Student Delete successfully!',

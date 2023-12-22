@@ -26,6 +26,20 @@ const updateTeacherController: RequestHandler = catchAsync(
   });}
  
 );
+// Find Facilitator By ID
+const findFacilitatorByIdController: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const id = req.params.id;
+    const result = await TeacherService.findFacilitatorById(id);
+
+    sendReponse<IFacilitator>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Teacher find successfully!',
+      data: result,
+    });
+  }
+);
 
 //!Delete Teacher controller
  const deleteTeacherController: RequestHandler = catchAsync(
@@ -33,7 +47,7 @@ const updateTeacherController: RequestHandler = catchAsync(
     const id = req.params.id;
     const result = await TeacherService.delteTeacher(id);
 
-    sendReponse<IFacilitator>(res, {
+    sendReponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Teacher Delete successfully!',
@@ -47,5 +61,6 @@ const updateTeacherController: RequestHandler = catchAsync(
 
 export const TeacherController = {
   updateTeacherController,
-  deleteTeacherController
+  deleteTeacherController,
+  findFacilitatorByIdController
 };

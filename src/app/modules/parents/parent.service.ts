@@ -1,6 +1,8 @@
 // create user
 
 import ApiError from "../../../errors/ApiError";
+import { IStudent } from "../student/student.interface";
+import { Student } from "../student/student.model";
 
 
 
@@ -32,7 +34,7 @@ const updateStudent = async (
 };
 
 //!Delete Student service
-const delteStudent = async (id: string): Promise<IStudent | null> => {
+const delteStudent = async (id: string) => {
   const result = await Student.findByIdAndDelete({ _id: id });
   if (!result) {
     throw new ApiError(400, 'Failed to delete');

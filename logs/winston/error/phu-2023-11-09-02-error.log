@@ -1,4 +1,0 @@
-Thu Nov 09 2023 | 2:40:53 [Error Log] error: Student validation failed: grade: Path `grade` is required., email: Path `email` is required., birthdate: Path `birthdate` is required., gender: Path `gender` is required., name: Path `name` is required., id: Path `id` is required.
-Thu Nov 09 2023 | 2:44:45 [Error Log] error: E11000 duplicate key error collection: lgh-web.students index: id_1 dup key: { id: "45" }
-Thu Nov 09 2023 | 2:45:36 [Error Log] error: Facilitator validation failed: designation: Path `designation` is required., email: Path `email` is required., name: Path `name` is required.
-Thu Nov 09 2023 | 2:48:17 [Error Log] error: Facilitator validation failed: designation: Path `designation` is required., email: Path `email` is required., name: Path `name` is required.

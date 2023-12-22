@@ -17,6 +17,9 @@ const facilitatorSchema = new Schema<IFacilitator>(
       type: String,
       required: true,
     },
+    template:{
+      type: Object,
+    },
     },
 
   {

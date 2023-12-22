@@ -13,9 +13,16 @@ const updateTeacher = async (id:string ,payload:Partial<IFacilitator>):Promise<I
   }
   return updatedTeacher;
 }
-
+//* Find Facilator By ID
+const findFacilitatorById = async (id: string): Promise<IFacilitator | null> => { 
+   const result = await Facilitator.findById(id);
+    if (!result) {
+      throw new ApiError(400, 'Failed to find');
+    }
+    return result;
+} 
 // !Delete Teacher service
- const delteTeacher = async (id: string): Promise<IFacilitator | null> => { 
+ const delteTeacher = async (id: string) => { 
   const result = await Facilitator.findByIdAndDelete({ _id: id });
   if (!result) {
     throw new ApiError(400, 'Failed to delete');
@@ -25,5 +32,6 @@ const updateTeacher = async (id:string ,payload:Partial<IFacilitator>):Promise<I
 
 export const TeacherService = {
   updateTeacher,
-  delteTeacher
+  delteTeacher,
+  findFacilitatorById
 }

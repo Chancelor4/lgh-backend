@@ -3,6 +3,9 @@ import { userRoutes } from '../modules/users/user.routes';
 import { StudentRoutes } from '../modules/student/student.routes';
 import { TeachersRoutes } from '../modules/teachers/teacher.routes';
 import { PostRoutes } from '../modules/posts/post.routes';
+import { GradesRoutes } from '../modules/Grades/grade.routes';
+import { NoticeRoutes } from '../modules/Notices/notices.routes';
+import { EmailRoutes } from '../modules/Email/emial.routes';
 
 
 const router = express.Router();
@@ -24,6 +27,18 @@ const moduleRoutes = [
   {
     path: '/posts',
     route: PostRoutes,
+  },
+  {
+    path: '/grades',
+    route: GradesRoutes,
+  },
+  {
+    path: '/notices',
+    route: NoticeRoutes,
+  },
+  {
+    path:'/email',
+    route:EmailRoutes
   }
 ]
 
